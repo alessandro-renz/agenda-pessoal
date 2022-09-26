@@ -1,0 +1,21 @@
+:host::ng-deep{
+  .pagina{
+    padding-top: 40px;
+  }
+
+  .title{
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+
+  .container{
+    @media screen and (max-width: 768px){
+      overflow-x: scroll;
+    }
+  } 
+}
