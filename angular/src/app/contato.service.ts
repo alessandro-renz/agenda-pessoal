@@ -17,10 +17,14 @@ export class ContatoService {
 
   get list(): Observable<any> {
     const id = this.loginService.user.id
-    return this.http.get(`${this.BASE_URL}/api/contato/listar/${id}`, {headers: {username: "admin", password: "12345678"}})
+    return this.http.get(`${this.BASE_URL}/api/contato/listar/${id}`, {headers: {Authorization: `Bearer ${this.token}`}})
   }
 
   save(data: {}): Observable<any>{
     return this.http.post(`${this.BASE_URL}/api/contato/salvar`, data, {headers: {Authorization: this.token}})
+  }
+
+  getImage(id: number): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/api/foto/download/${id}`, {headers: {Authorization: `Bearer ${this.token}`}})
   }
 }

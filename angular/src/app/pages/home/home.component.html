@@ -1,3 +1,23 @@
 <section class="container pt-5">
-  <app-list title="Home"></app-list>
+  <a [routerLink]="['contatos/add']" class="btn btn-primary">Adicionar contato</a>
+  <app-list title="Home">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pessoa of pessoas">
+        <td>
+          <!-- <img [src]="getImage(pessoa.pessoa.id)"> -->
+        </td>
+        <td>{{pessoa.pessoa.nome}}</td>
+        <td>{{pessoa.pessoa.cpf}}</td>
+        <td>{{pessoa.telefone}}</td>
+      </tr>
+    </tbody>
+  </app-list>
 </section>

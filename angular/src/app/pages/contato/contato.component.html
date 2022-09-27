@@ -1,4 +1,26 @@
 <section class="container pt-5">
-    <app-list title="Contatos"></app-list>
+  <app-list title="Contatos">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contato of contatos">
+        <td>
+          <!-- <img [src]="getImage(pessoa.pessoa.id)"> -->
+        </td>
+        <td>{{contato.pessoa.nome}}</td>
+        <td>{{contato.pessoa.cpf}}</td>
+        <td>{{contato.telefone}}</td>
+        <td>
+          <a [routerLink]="[]"></a>
+        </td>
+      </tr>
+    </tbody>
+  </app-list>
 </section>
-  

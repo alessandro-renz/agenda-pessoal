@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { ContatoService } from 'src/app/contato.service';
-import { LoginService } from 'src/app/login.service';
+import { Pessoa } from 'src/app/models/pessoa';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +9,20 @@ import { LoginService } from 'src/app/login.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  contatos!: []
+  pessoas!: Pessoa[]
+  ngUnsubscribe = new Subject()
 
   constructor(
     private contatoService: ContatoService
   ) { }
 
   ngOnInit() {
-    this.contatoService.list.subscribe(contatos => {
-      console.log(contatos)
+    this.contatoService.list
+    .pipe(takeUntil(this.ngUnsubscribe))
+    .subscribe(pessoas => {
+      console.log('pessoas', pessoas)
+      this.pessoas = pessoas
     })
-  }
 
+  }
 }
