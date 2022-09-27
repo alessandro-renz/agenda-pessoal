@@ -1,9 +1,10 @@
 <div id="auth">
   <div class="container">
     <h1 class="title">Login</h1>
+    <div class="alert alert-danger" *ngIf="error">Senha ou username incorreto(s)!</div>
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="E-mail" name="login"  [(ngModel)]="username">
-      <label for="floatingInput">E-mail</label>
+      <input type="email" class="form-control" id="floatingInput" placeholder="Username" name="login"  [(ngModel)]="username">
+      <label for="floatingInput">Username</label>
     </div>
     <div class="form-floating">
       <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" name="senha" [(ngModel)]="password">

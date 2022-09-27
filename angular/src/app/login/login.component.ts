@@ -10,6 +10,7 @@ import { LoginService } from './../login.service';
 export class LoginComponent implements OnInit {
   username!: string
   password!: string
+  error = false
 
   constructor(
     private loginService: LoginService,
@@ -17,8 +18,8 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const token = localStorage.getItem("token")
-    if(token){
+    const user = this.loginService.user
+    if(user.accessToken){
       this.router.navigate(["page"])
     }
   }
@@ -30,10 +31,12 @@ export class LoginComponent implements OnInit {
     }
     this.loginService.login(data).subscribe(user => {
       if(user.accessToken){
-        localStorage.removeItem('token')
-        localStorage.setItem('token', user.accessToken)
+        this.loginService.setUser(user)
         this.router.navigate(["page"])
+        return
       }
+    }, () => {
+      this.error = true
     })
   }
 }

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GuardRouteGuard } from 'src/app/guard-route.guard';
-import { HomeComponent } from './home.component';
+import { ContatoComponent } from './contato.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent,
+    component: ContatoComponent,
     canActivate: [GuardRouteGuard]
   }
 ];
@@ -15,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule { }
+export class ContatoRoutingModule { }

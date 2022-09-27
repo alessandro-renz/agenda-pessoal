@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ContatoService } from 'src/app/contato.service';
-import { LoginService } from 'src/app/login.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-contato',
+  templateUrl: './contato.component.html',
+  styleUrls: ['./contato.component.scss']
 })
-export class HomeComponent implements OnInit {
-  contatos!: []
+export class ContatoComponent implements OnInit {
 
   constructor(
     private contatoService: ContatoService
