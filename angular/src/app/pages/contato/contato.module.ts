@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -18,6 +19,7 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     CommonModule,
     ContatoRoutingModule,
     SharedModule,
+    FormsModule,
     NgxMaskModule.forRoot(),
   ]
 })

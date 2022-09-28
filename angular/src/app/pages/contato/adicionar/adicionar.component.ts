@@ -9,7 +9,11 @@ export class AdicionarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  submit(form: any){
+    console.log(form.value)
   }
 
 }

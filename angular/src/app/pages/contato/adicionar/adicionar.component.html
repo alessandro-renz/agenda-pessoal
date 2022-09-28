@@ -1,66 +1,66 @@
 <section class="container">
   <h1 class="title my-4">Adicionar contato</h1>
-  <form>
+  <form #form="ngForm" (submit)="submit(form)">
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingNome" placeholder="Nome">
-      <label for="floatingNome">Nome</label>
+      <input type="email" class="form-control" id="floatingNome" placeholder="Nome" name="nome" ngModel #inputNome="ngModel" required>
+      <label for="floatingNome" >Nome</label>
     </div>
     <div class="row">
       <div class="form-floating mb-3 col-12 col-lg-6">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" ngModel #inputEmail="ngModel" required>
         <label for="floatingInput">E-mail</label>
       </div>
 
       <div class="form-floating mb-3 col-12 col-lg-6">
-        <input type="text" class="form-control" id="floatingCpf" mask="000.000.000-00" placeholder="CPF">
+        <input type="text" class="form-control" id="floatingCpf" mask="000.000.000-00" placeholder="CPF" name="cpf" ngModel #inputCpf="ngModel" required>
         <label for="floatingCpf">CPF</label>
       </div>
     </div>
 
     <div class="row">
       <div class="form-floating mb-3 col-12 col-lg-4">
-        <input type="text" class="form-control" id="floatingBairro" placeholder="Bairro">
+        <input type="text" class="form-control" id="floatingBairro" placeholder="Bairro" name="bairro" ngModel #inputBairro="ngModel" required>
         <label for="floatingBairro">Bairro</label>
       </div>
 
       <div class="form-floating mb-3 col-12 col-lg-4">
-        <input type="text" class="form-control" mask="00000-000" id="floatingCep" placeholder="Cep">
+        <input type="text" class="form-control" mask="00000-000" id="floatingCep" placeholder="Cep" name="cep" ngModel #inputCep="ngModel" required>
         <label for="floatingCep">CEP</label>
       </div>
 
       <div class="form-floating mb-3 col-12 col-lg-4">
-        <input type="text" class="form-control" id="floatingCidade" placeholder="Cidade">
+        <input type="text" class="form-control" id="floatingCidade" placeholder="Cidade" name="cidade" ngModel #inputCidade="ngModel" required>
         <label for="floatingCidade">Cidade</label>
       </div>
     </div>
 
     <div class="row">
       <div class="form-floating mb-3 col-12 col-lg-4">
-        <input type="text" class="form-control" id="floatingEstado" placeholder="Estado">
+        <input type="text" class="form-control" id="floatingEstado" placeholder="Estado" name="estado" ngModel #inputEstado="ngModel" required>
         <label for="floatingEstado">Estado</label>
       </div>
 
       <div class="form-floating mb-3 col-12 col-lg-4">
-        <input type="text" class="form-control" id="floatingLogradouro" placeholder="Logradouro">
+        <input type="text" class="form-control" id="floatingLogradouro" placeholder="Logradouro" name="logradouro" ngModel #inputLogradouro="ngModel" required>
         <label for="floatingLogradouro">Logradouro</label>
       </div>
 
       <div class="form-floating mb-3 col-12 col-lg-1">
-        <input type="text" class="form-control" id="floatingNumero" placeholder="Numero">
+        <input type="text" class="form-control" id="floatingNumero" placeholder="Numero" name="numero" ngModel #inputNumero="ngModel" required>
         <label for="floatingNumero">N°</label>
       </div>
 
       <div class="form-floating mb-3 col-12 col-lg-3">
-        <input type="text" class="form-control" id="floatingPais" placeholder="Pais">
+        <input type="text" class="form-control" id="floatingPais" placeholder="Pais" name="pais" ngModel #inputPais="ngModel" required>
         <label for="floatingPais">País</label>
       </div>
     </div>
 
     <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="floatingTelefone" placeholder="Telefone">
+      <input type="text" class="form-control" id="floatingTelefone" placeholder="Telefone" name="telefone" ngModel #inputTelefone="ngModel" required>
       <label for="floatingTelefone" mask="(00) 0000-0000">Telefone</label>
     </div>
 
-    <button type="button" class="btn btn-success w-100"><strong>Adicionar</strong></button>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-success w-100"><strong>Adicionar</strong></button>
   </form>
 </section>
