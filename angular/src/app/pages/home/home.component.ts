@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
     this.contatoService.list
     .pipe(takeUntil(this.ngUnsubscribe))
     .subscribe(pessoas => {
-      console.log('pessoas', pessoas)
       this.pessoas = pessoas
     })
 

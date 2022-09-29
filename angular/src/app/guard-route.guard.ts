@@ -16,7 +16,7 @@ export class GuardRouteGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const user = this.loginService.user
-      if(!user.accessToken){
+      if(!user?.accessToken){
         this.router.navigate([""])
         return false;
       }

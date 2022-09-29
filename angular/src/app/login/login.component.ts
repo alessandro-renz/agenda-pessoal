@@ -18,10 +18,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const user = this.loginService.user
-    if(user.accessToken){
-      this.router.navigate(["page"])
-    }
+    this.loginService.clearUser()
   }
 
   submit(){
